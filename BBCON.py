@@ -1,25 +1,31 @@
 # -*- coding: utf-8 -*-
 
+from Motob import Motob
+
 class BBCON:
 
     def __init__(self):
         self.behaviors = []
         self.active-behaviors = []
         self.sensobs = []
-        self.motobs = []
+        self.motobs = Motob()
         self.arbitrator = []
 
     def add_behavior(self, behavior):
-        self.behaviors.append(behavior)
+        if behavior not in self.behaviors:
+            self.behaviors.append(behavior)
 
     def add_sensob(self, sensob):
-        self.sensobs.append(sensob)
+        if sensob not in self.sensobs:
+            self.sensobs.append(sensob)
 
-    def activate_behavior(self acBehavior):
-        self.activate_behavior.append(acBehavior)
+    def activate_behavior(self behavior):
+        if behavior in self.behaviors:
+            self.activate_behavior.append(behavior)
 
     def deactive_behavior(self, behavior):
-        self.behaviors.pop(behavior)
+        if behavior in self.activate_behavior:
+            self.activate_behavior.remove(behavior)
 
     def run_one_timestep(self):
         # Update all sensobs
