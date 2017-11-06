@@ -1,1 +1,10 @@
 deps/
+camera.py
+image.png
+imager2.py
+irproximity_sensor.py
+motors.py
+reflectance_sensor.py
+robodemo.py
+ultrasonic.py
+zumo_button.py
