@@ -1,3 +1,4 @@
 # ZUMO robot-TDT4113
 
-Bahavior-Based-Robot, Øving 6 i PLAB2
+PLAB-2 (TDT-4113) Project 6:
+Behavior-Based Robot
