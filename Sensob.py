@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+from camera import*
+from ultrasonic import*
+from irproximity_sensor import*
+
 class Sensob:
 
     def __init__(self):
@@ -15,3 +19,5 @@ class Sensob:
     def reset(self):
         for sensor in self.sensors:
             sensor.reset()
+
+
