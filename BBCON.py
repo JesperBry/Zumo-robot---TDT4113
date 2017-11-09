@@ -21,11 +21,11 @@ class BBCON:
 
     def activate_behavior(self, behavior):
         if behavior in self.behaviors:
-            self.activate_behavior.append(behavior)
+            self.active_behaviors.append(behavior)
 
     def deactive_behavior(self, behavior):
         if behavior in self.activate_behavior:
-            self.activate_behavior.remove(behavior)
+            self.active_behaviors.remove(behavior)
 
     def run_one_timestep(self):
         # Update all sensobs
