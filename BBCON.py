@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from Motob import Motob
+from Motob import *
+from Arbitrator import *
+from Behavior import *
 from Sensob import *
 
 class BBCON:
@@ -10,7 +12,7 @@ class BBCON:
         self.active_behaviors = []
         self.sensobs = []
         self.motobs = Motob()
-        self.arbitrator = []
+        self.arbitrator = None
 
     def add_behavior(self, behavior):
         if behavior not in self.behaviors:
@@ -29,8 +31,24 @@ class BBCON:
             self.active_behaviors.remove(behavior)
 
     def run_one_timestep(self):
+
         # Update all sensobs
+
+        for sensor_object in self.sensobs:
+            sensor_object.update()
+
+        # Update all behaviors
+
+        for behavior in self.behaviors:
+            behavior.update()
+
         # Invoke the arbitrator by calling arbitrator.choose action
+
+        action = self.arbitrator.choose_behavior(self.behaviors)
+
         # Update the motobs based on these motor recommendations
         # Wait
+
+
+
         # Reset the sensobs
