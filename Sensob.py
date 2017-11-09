@@ -11,6 +11,7 @@ class Sensob:
         self.value = None
 
     def update(self):
+        # Fetch relevant sensor value(s) and convert them into one value
         return
 
     def get_value(self):
