@@ -3,6 +3,7 @@
 from camera import *
 from ultrasonic import *
 from irproximity_sensor import *
+from reflectance_sensors import *
 
 class Sensob:
 
@@ -11,6 +12,7 @@ class Sensob:
         self.value = None
 
     def update(self):
+        # Fetch relevant sensor value(s) and convert them into one value
         return
 
     def get_value(self):
@@ -19,4 +21,5 @@ class Sensob:
     def reset(self):
         for sensor in self.sensors:
             sensor.reset()
+
 
