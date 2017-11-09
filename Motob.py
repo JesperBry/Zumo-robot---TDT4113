@@ -26,4 +26,6 @@ class Motob:
             self.motor.left(hastighet)
         elif hva == 'R':
             self.motor.right(hastighet)
+        elif hva == 'S':
+            self.motor.stop()
         # Convert a motor recommendation into one or more motor settings, which are sent to the corresponding motor(s).
