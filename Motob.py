@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
+from motors import Motors
+
 class Motob:
 
     def __init__(sefl):
-        self.motors = []
-        self.value = int
+        self.motor = Motors()
+        self.values = []
 
     def update(self):
         # Receive a new motor recommendation, load it into the value slot, and operationalize it.
