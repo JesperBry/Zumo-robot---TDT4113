@@ -8,3 +8,4 @@ reflectance_sensor.py
 robodemo.py
 ultrasonic.py
 zumo_button.py
+*.xml
