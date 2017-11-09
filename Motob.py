@@ -4,7 +4,7 @@ from motors import Motors
 
 class Motob:
 
-    def __init__(sefl):
+    def __init__(self):
         self.motor = Motors()
         self.values = []
 
