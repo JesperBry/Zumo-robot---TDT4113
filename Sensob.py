@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from camera import*
-from ultrasonic import*
-from irproximity_sensor import*
+from camera import *
+from ultrasonic import *
+from irproximity_sensor import *
+from reflectance_sensors import *
 
 class Sensob:
 
