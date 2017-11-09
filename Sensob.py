@@ -22,4 +22,3 @@ class Sensob:
         for sensor in self.sensors:
             sensor.reset()
 
-

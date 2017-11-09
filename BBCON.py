@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from Motob import Motob
+from Sensob import *
 
 class BBCON:
 
