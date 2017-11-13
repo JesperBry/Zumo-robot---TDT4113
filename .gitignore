@@ -4,6 +4,7 @@ image.png
 imager2.py
 irproximity_sensor.py
 motors.py
+robodemo.py
 reflectance_sensors.py
 ultrasonic.py
 zumo_button.py
