@@ -63,7 +63,6 @@ class BBCON():
             m.forward(0.3,0.5)
             m.backward(0.3,0.5)
             i -= 1
-        sleep(2)
 
         # Update the motobs based on these motor recommendations
         # Wait
