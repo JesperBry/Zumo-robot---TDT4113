@@ -14,6 +14,7 @@ class BBCON():
         self.sensobs = []
         self.motobs = Motob()
         self.arbitrator = None
+        self.m = False
 
     def add_behavior(self, behavior):
         if behavior not in self.behaviors:
@@ -54,10 +55,10 @@ class BBCON():
         # Invoke the arbitrator by calling arbitrator.choose action
 
         #action = self.arbitrator.choose_behavior(self.behaviors)
-
-        m = Motors()
-        m.forward(0.5,1)
-        m.backward(0.5,1)
+        if not self.m:
+            self.m = Motors()
+        self.m.forward(0.5,1)
+        self.m.backward(0.5,1)
         sleep(2)
 
         # Update the motobs based on these motor recommendations
