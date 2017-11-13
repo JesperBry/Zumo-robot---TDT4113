@@ -56,14 +56,14 @@ class BBCON():
 
         #action = self.arbitrator.choose_behavior(self.behaviors)
 
-        ZumoButton().wait_for_press()
+        ZumoButton().wait_for_press() # er nødt til å ha med denne tydeligvis
         m = Motors()
-        i = 20
+        i = 10
         while i > 0:
-            m.left(0.2,0.3)
-            m.right(-0.2,0.3)
-            m.left(-0.2, 0.3)
-            m.right(0.2, 0.3)
+            m.left(0.1,0.5) # (speed,duration)
+            m.right(-0.1,0.5)
+            m.left(-0.1, 0.5)
+            m.right(0.1, 0.5)
             i -= 1
 
         # Update the motobs based on these motor recommendations
