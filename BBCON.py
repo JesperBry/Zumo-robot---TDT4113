@@ -14,6 +14,7 @@ class BBCON:
         self.sensobs = []
         self.motobs = Motob()
         self.arbitrator = None
+        self.controller()
 
     def add_behavior(self, behavior):
         if behavior not in self.behaviors:
