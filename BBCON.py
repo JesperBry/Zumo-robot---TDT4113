@@ -5,6 +5,7 @@ from Arbitrator import *
 from Behavior import *
 from Sensob import *
 from robodemo import dancer
+from zumo_button import ZumoButton
 
 class BBCON():
 
@@ -57,6 +58,8 @@ class BBCON():
         #action = self.arbitrator.choose_behavior(self.behaviors)
         if not self.m:
             self.m = Motors()
+
+        ZumoButton.wait_for_press()
         self.m.forward(0.5,1)
         self.m.backward(0.5,1)
         sleep(2)
