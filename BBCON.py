@@ -58,8 +58,11 @@ class BBCON():
 
         ZumoButton().wait_for_press()
         m = Motors()
-        m.forward(0.5,1)
-        m.backward(0.5,1)
+        i = 20
+        while i > 0:
+            m.forward(0.3,0.5)
+            m.backward(0.3,0.5)
+            i -= 1
         sleep(2)
 
         # Update the motobs based on these motor recommendations
