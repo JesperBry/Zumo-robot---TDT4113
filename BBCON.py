@@ -6,7 +6,7 @@ from Behavior import *
 from Sensob import *
 from robodemo import dancer
 
-class BBCON:
+class BBCON():
 
     def __init__(self):
         self.behaviors = []
