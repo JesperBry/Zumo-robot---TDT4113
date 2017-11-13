@@ -59,7 +59,7 @@ class BBCON():
         if not self.m:
             self.m = Motors()
 
-        ZumoButton.wait_for_press()
+        ZumoButton().wait_for_press()
         self.m.forward(0.5,1)
         self.m.backward(0.5,1)
         sleep(2)
