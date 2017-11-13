@@ -55,7 +55,9 @@ class BBCON:
 
         #action = self.arbitrator.choose_behavior(self.behaviors)
 
-        dancer()
+        m = Motors()
+        m.forward(0.5,1)
+        m.backward(0.5,1)
 
         # Update the motobs based on these motor recommendations
         # Wait
