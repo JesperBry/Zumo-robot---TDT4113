@@ -60,8 +60,8 @@ class BBCON():
         m = Motors()
         i = 10
         while i > 0:
-            m.set_value([-0.2,0.5], 5) # (speed,duration)
-            m.set_value([0.2, -0.5], 5)
+            m.set_value([0,-0.5], 1) # (speed,duration)
+            m.set_value([-0.5, 0], 1)
             i -= 1
 
         # Update the motobs based on these motor recommendations
