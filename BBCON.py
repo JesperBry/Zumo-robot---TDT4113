@@ -2,17 +2,22 @@
 
 from Motob import *
 from Arbitrator import *
-from Behavior import *
 from Sensob import *
-from robodemo import dancer
-from zumo_button import ZumoButton
+from go_behavior import Go
+from avoid_collisions import Avoid_collisions
+from stop_sign import StopSign
+from camera_sensob import Camera_sensob
+from IRproximity import IRProximity_sensob
+from ultrasonic_sensob import Ultrasonic_sensob
+
+
 
 class BBCON():
 
     def __init__(self):
-        self.behaviors = []
+        self.sensobs = [Ultrasonic_sensob(), IRProximity_sensob(), Camera_sensob()]
+        self.behaviors = [Go(), Avoid_collisions(self.sensobs[0], self.sensobs[1]), StopSign(self.sensobs[2])]
         self.active_behaviors = []
-        self.sensobs = []
         self.motobs = [Motob([Motors()])]
         self.arbitrator = Arbitrator()
 

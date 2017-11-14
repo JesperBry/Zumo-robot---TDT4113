@@ -3,9 +3,9 @@ from Behavior import Behavior
 from config import Config
 
 
-class Avoid_collisions(Behavior):
-    def __init__(self, camera=camera_sensob.Camera_sensob()):
-        super(Avoid_collisions, self).__init__(None)
+class StopSign(Behavior):
+    def __init__(self, camera):
+        super(StopSign, self).__init__(None)
         self.sensobs = [camera]
 
         self.priority = Config['stopSignPri']

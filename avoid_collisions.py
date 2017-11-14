@@ -1,9 +1,9 @@
-import Behavior, ultrasonic_sensob, IRproximity
+import Behavior
 from config import Config
 
 
 class Avoid_collisions(Behavior.Behavior):
-    def __init__(self, distance=ultrasonic_sensob.Ultrasonic_sensob(), ir=IRproximity.IRProximity_sensob()):
+    def __init__(self, distance, ir):
         super(Avoid_collisions, self).__init__(None)
         self.sensobs = [distance, ir]
 
