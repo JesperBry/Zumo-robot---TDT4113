@@ -13,8 +13,8 @@ class BBCON():
         self.behaviors = []
         self.active_behaviors = []
         self.sensobs = []
-        self.motobs = Motob()
-        self.arbitrator = None
+        self.motobs = [Motob([Motors()])]
+        self.arbitrator = Arbitrator()
 
     def add_behavior(self, behavior):
         if behavior not in self.behaviors:
@@ -38,6 +38,7 @@ class BBCON():
         for sensob in self.sensobs:
             sensob.update()
 
+        # Update all behaviors
         for behavior in self.behaviors:
             behavior.update()
             if behavior.active_flag:
@@ -45,50 +46,31 @@ class BBCON():
             else:
                 self.deactivate_behavior(behavior)
 
-        recommendations, stop = self.arbitrator.choose_action()
+        # Invoke the arbitrator by calling arbitrator.choose action
+        recommendations, stop = self.arbitrator.choose_action(self.active_behaviors)
         for i in range(len(self.motobs)):
             self.motobs[i].update(recommendations[i])
 
+        # Wait
         time.sleep(0.5)
 
+        # Reset the sensobs
         for sensob in self.sensobs:
             sensob.reset()
 
-        """
-        for sensor_object in self.sensobs:
-            sensor_object.update()
 
-        # Update all behaviors
-
-        for ac_behavior in self.active_behaviors:
-            if not ac_behavior.active_flag:
-                self.deactivate_behavior(ac_behavior)
-
-        for behavior in self.behaviors:
-            behavior.update()
-            if behavior.active_flag:
-                self.activate_behavior(behavior)
-        """
-
-        # Invoke the arbitrator by calling arbitrator.choose action
-
-        #action = self.arbitrator.choose_behavior(self.behaviors)
-
-        ZumoButton().wait_for_press() # er nødt til å ha med denne tydeligvis
-        m = Motors()
-        i = 10
-        while i > 0:
-            m.set_value([0.2,-0.2], 1) # (speed,duration)
-            #m.set_value([-0.2, 0.2], 1)
-            m.forward(0.3, 1)
-            i -= 1
-
-        # Update the motobs based on these motor recommendations
-        # Wait
+        #ZumoButton().wait_for_press() # er nødt til å ha med denne tydeligvis
+        #m = Motors()
+        #i = 10
+        #while i > 0:
+        #    m.set_value([0.2,-0.2], 1) # (speed,duration)
+        #    #m.set_value([-0.2, 0.2], 1)
+        #    m.forward(0.3, 1)
+        #    i -= 1
 
 
 
-        # Reset the sensobs
+
 
     def controller(self):
         i = 30
