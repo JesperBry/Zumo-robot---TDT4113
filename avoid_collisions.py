@@ -1,0 +1,42 @@
+import Behavior, ultrasonic_sensob, irproximity_sensor, camera_sensob
+
+class Avoid_collisions_behavior(Behavior):
+    def __init__(self, distance_sensob = ultrasonic_sensob(), ir_sensob= irproximity_sensor(), camera_sensob = Camera_sensob()):
+        super(Avoid_collisions_behavior, self).__init__()
+        self.sensobs = [distance_sensob, ir_sensob, camera_sensob]
+
+        self.priority = 1
+
+    def consider_deactivation(self):
+        self.active_flag = True
+
+    def consider_activation(self):
+        self.active_flag = True
+
+    def sense_and_act(self):
+        dist = self.sensobs[0].get_value()
+
+        ir = self.sensobs[1].get_value()
+
+        if ir[0]:
+            self.motor_recommendations = [(0.5, -0.5)]
+            self.match_degree = 1
+        elif ir[1]:
+            self.motor_recommendations = [(-0.5, 0.5)]
+            self.match_degree = 1
+        elif dist < 10:
+            self.motor_recommendations = [(0,0)]
+            if self.sensobs[2].update():
+                print("RODT RODT!")
+                self.motor_recommendations = [(1, 1), 1]
+                self.match_degree = 1
+            else:
+                print("ikke rodt, snu til venstre")# turn left
+                self.motor_recommendations = [(-0.5, 0.5)]
+                self.match_degree = 1
+        elif dist > 15:
+            self.motor_recommendations = [(0.5, 0.5)]
+            self.match_degree = 0.1
+        else:
+            self.motor_recommendations = [(0.5, 0.5)]
+            self.match_degree = 1
