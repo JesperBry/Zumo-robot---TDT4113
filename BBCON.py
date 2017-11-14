@@ -35,6 +35,24 @@ class BBCON():
     def run_one_timestep(self):
 
         # Update all sensobs
+        for sensob in self.sensobs:
+            sensob.update()
+
+        for behavior in self.behaviors:
+            behavior.update()
+            if behavior.active_flag:
+                self.activate_behavior(behavior)
+            else:
+                self.deactivate_behavior(behavior)
+
+        recommendations, stop = self.arbitrator.choose_action()
+        for i in range(len(self.motobs)):
+            self.motobs[i].update(recommendations[i])
+
+        time.sleep(0.5)
+
+        for sensob in self.sensobs:
+            sensob.reset()
 
         """
         for sensor_object in self.sensobs:

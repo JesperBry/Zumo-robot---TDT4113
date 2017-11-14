@@ -1,4 +1,5 @@
-import Behavior, ultrasonic_sensob, irproximity_sensor, camera_sensob
+import Behavior, ultrasonic_sensob, irproximity_sensor
+from camera_sensob import Camera_sensob
 
 class Avoid_collisions_behavior(Behavior):
     def __init__(self, distance_sensob = ultrasonic_sensob(), ir_sensob= irproximity_sensor(), camera_sensob = Camera_sensob()):
