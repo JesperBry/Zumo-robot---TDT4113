@@ -3,6 +3,7 @@
 Config = {
     'minDist': 10,
     'J_turn': [-5, 10],
-    'collisionPri': 2
+    'collisionPri': 2,
+    'forward': [5, 5],
 
 }
