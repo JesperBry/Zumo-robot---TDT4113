@@ -9,6 +9,7 @@ class Behavior:
         self.priority = 1           # Skal fylles av subklasse
         self.match_degree = 0       # Oppdateres hvert tick
         self.weight = 0             # Oppdateres hvert tick
+        self.motor_recommendations = None
 
     def consider_activation(self):  # Skal implementeres av subklasse
         return
