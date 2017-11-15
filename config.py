@@ -2,9 +2,9 @@
 
 Config = {
     'minDist': 10,
-    'J_turn': [[-5, 10]],
+    'J_turn': [[-0.5, 1]],
     'collisionPri': 2,
-    'forward': [[5, 5]],
+    'forward': [[0.5, 0.5]],
     'stopSignPri': 4, #Må være høyest
     'stop': [[0, 0]],
     'redThr': 0.8,

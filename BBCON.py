@@ -84,5 +84,4 @@ class BBCON():
         i = 30
         while i > 0:
             self.run_one_timestep()
-            sleep(1)
             i -= 1
