@@ -11,4 +11,5 @@ class IRProximity_sensob(Sensob):
 
     def update(self):
         self.value = self.sensors[0].update()
+        print("IR", self.value)
         return self.value
