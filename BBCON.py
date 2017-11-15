@@ -16,8 +16,8 @@ from zumo_button import ZumoButton
 class BBCON():
 
     def __init__(self):
-        self.sensobs = [Ultrasonic_sensob(), IRProximity_sensob(), Camera_sensob()]
-        self.behaviors = [Go(), Avoid_collisions(self.sensobs[0], self.sensobs[1]), StopSign(self.sensobs[2])]
+        self.sensobs = []#[Ultrasonic_sensob(), IRProximity_sensob(), Camera_sensob()]
+        self.behaviors = [Go()]#, Avoid_collisions(self.sensobs[0], self.sensobs[1]), StopSign(self.sensobs[2])]
         self.active_behaviors = []
         self.motobs = [Motob([Motors()])]
         self.arbitrator = Arbitrator()
@@ -54,6 +54,7 @@ class BBCON():
 
         # Invoke the arbitrator by calling arbitrator.choose action
         recommendations, stop = self.arbitrator.choose_action(self.active_behaviors)
+        print(recommendations, stop)
         for i in range(len(self.motobs)):
             self.motobs[i].update(recommendations[i])
 
