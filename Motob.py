@@ -11,5 +11,4 @@ class Motob:
 
     def operationalize(self):
         for i in range(len(self.motors)):
-            self.values = list(map(lambda v: v / 2, self.values))
             self.motors[i].set_value(self.values)
