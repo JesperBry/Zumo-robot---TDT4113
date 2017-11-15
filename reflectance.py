@@ -8,6 +8,6 @@ class Reflectance(Sensob):
         self.sensors = [ReflectanceSensors()]
 
     def update(self):
-        self.value = self.sensors[0].update()
+        self.value = sum(self.sensors[0].update())
         print("Reflectance", self.value)
         return self.value
