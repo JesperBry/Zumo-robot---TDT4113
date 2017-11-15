@@ -7,6 +7,7 @@ class Go(Behavior):
 
     def __init__(self):
         super(Go, self).__init__(None)
+        self.priority = Config['goPri']
 
     def consider_activation(self):
         self.active_flag = True

@@ -9,7 +9,8 @@ Config = {
     'stop': [[0, 0]],
     'redThr': 0.8,
     'grThr': 0.8,
-    'motorDuration': 0.5
+    'motorDuration': 0.5,
+    'goPri': 1
 
 
 }
