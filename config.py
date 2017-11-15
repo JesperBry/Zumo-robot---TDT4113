@@ -8,7 +8,8 @@ Config = {
     'stopSignPri': 4, #Må være høyest
     'stop': [[0, 0]],
     'redThr': 0.8,
-    'grThr': 0.8
+    'grThr': 0.8,
+    'motorDuration': 0.5
 
 
 }

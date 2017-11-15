@@ -1,4 +1,5 @@
 from motors import Motors
+from config import Config
 
 class Motob:
     def __init__(self, motors):
@@ -12,4 +13,4 @@ class Motob:
 
     def operationalize(self):
         for i in range(len(self.motors)):
-            self.motors[i].set_value(self.values)
+            self.motors[i].set_value(self.values, Config['motorDuration'])
