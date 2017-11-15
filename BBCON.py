@@ -10,13 +10,14 @@ from camera_sensob import Camera_sensob
 from IRproximity import IRProximity_sensob
 from ultrasonic_sensob import Ultrasonic_sensob
 from zumo_button import ZumoButton
+from reflectance import Reflectance
 
 
 
 class BBCON():
 
     def __init__(self):
-        self.sensobs = [Ultrasonic_sensob(), IRProximity_sensob(), Camera_sensob()]
+        self.sensobs = [Ultrasonic_sensob(), Reflectance(), Camera_sensob()]
         self.behaviors = [Go(), Avoid_collisions(self.sensobs[0], self.sensobs[1]), StopSign(self.sensobs[2])]
         self.active_behaviors = []
         self.motobs = [Motob([Motors()])]
