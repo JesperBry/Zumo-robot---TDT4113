@@ -22,7 +22,7 @@ class StopSign(Behavior):
         rgb = self.sensobs[0].update()
 
         self.match_degree = 0
-        self.motor_recommendations = None
+        self.motor_recommendations = Config['stop']
 
         if self.stopped:
             self.match_degree = 1
@@ -33,6 +33,5 @@ class StopSign(Behavior):
         elif rgb[0] > Config['redThr']:
             self.stopped = True
             self.match_degree = 1
-            self.motor_recommendations = Config['stop']
 
 
