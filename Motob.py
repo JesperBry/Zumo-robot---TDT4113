@@ -12,5 +12,7 @@ class Motob:
         self.operationalize()
 
     def operationalize(self):
-        for i in range(len(self.motors)):
-            self.motors[i].set_value(self.values, Config['motorDuration'])
+        m = Motors()
+        m.set_value(self.values, Config['motorDuration'])
+        #for i in range(len(self.motors)):
+        #    self.motors[i].set_value(self.values, Config['motorDuration'])
