@@ -9,6 +9,7 @@ from stop_sign import StopSign
 from camera_sensob import Camera_sensob
 from IRproximity import IRProximity_sensob
 from ultrasonic_sensob import Ultrasonic_sensob
+from zumo_button import ZumoButton
 
 
 
