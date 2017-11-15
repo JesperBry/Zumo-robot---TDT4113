@@ -19,7 +19,7 @@ class StopSign(Behavior):
         self.active_flag = True
 
     def sense_and_act(self):
-        rgb = self.sensobs[0].update()
+        rgb = self.sensobs[0].value
 
         self.match_degree = 0
         self.motor_recommendations = Config['stop']
