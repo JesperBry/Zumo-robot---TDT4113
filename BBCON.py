@@ -31,7 +31,7 @@ class BBCON():
             self.sensobs.append(sensob)
 
     def activate_behavior(self, behavior):
-        if behavior in self.behaviors:
+        if behavior not in self.active_behaviors:
             self.active_behaviors.append(behavior)
 
     def deactivate_behavior(self, behavior):
