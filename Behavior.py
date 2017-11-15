@@ -25,5 +25,5 @@ class Behavior:
 
         self.sense_and_act()
 
-        self.weight = self.weight * self.match_degree
+        self.weight = self.priority * self.match_degree
 
