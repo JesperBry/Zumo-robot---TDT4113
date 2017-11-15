@@ -7,11 +7,11 @@ class Ultrasonic_sensob(Sensob):
 
     def __init__(self):
         super(Ultrasonic_sensob, self).__init__()
-        print("hehe")
         self.sensors = [Ultrasonic()]
 
     def update(self):
         for sensor in self.sensors:
             sensor.update()
         self.value = self.sensors[0].value
+        print("Ultrasonic", self.value)
         return self.value

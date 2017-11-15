@@ -8,7 +8,7 @@ class Motob:
 
     def update(self, values):
         self.values = values
-        print("motob value", self.values)
+        print("Motob value", self.values)
         self.operationalize()
 
     def operationalize(self):

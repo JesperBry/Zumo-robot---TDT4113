@@ -54,7 +54,6 @@ class BBCON():
 
         # Invoke the arbitrator by calling arbitrator.choose action
         recommendations, stop = self.arbitrator.choose_action(self.active_behaviors)
-        print(recommendations, stop)
         for i in range(len(self.motobs)):
             self.motobs[i].update(recommendations[i])
 

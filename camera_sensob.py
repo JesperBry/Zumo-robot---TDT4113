@@ -27,5 +27,6 @@ class Camera_sensob(Sensob):
         return rgb
 
     def update(self):
-        self.value = self.sensors[0].update()
-        return self.rgb(self.value)
+        self.value = self.rgb(self.sensors[0].update())
+        print("Camera", self.value)
+        return self.value
