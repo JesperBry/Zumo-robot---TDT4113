@@ -7,8 +7,8 @@ class IRProximity_sensob(Sensob):
 
     def __init__(self):
         super(IRProximity_sensob, self).__init__()
-        self.sensors = IRProximitySensor()
+        self.sensors = [IRProximitySensor()]
 
     def update(self):
-        self.value = self.sensors.update()
-        print("IRProximity:", self.value)
+        self.value = self.sensors[0].update()
+        return self.value

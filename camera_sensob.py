@@ -7,7 +7,7 @@ class Camera_sensob(Sensob):
 
     def __init__(self):
         super(Camera_sensob, self).__init__()
-        self.sensors = Camera()
+        self.sensors = [Camera()]
 
     def rgb(self, img):
         rgb = [0, 0, 0]
@@ -27,5 +27,5 @@ class Camera_sensob(Sensob):
         return rgb
 
     def update(self):
-        self.value = self.sensors.update()
+        self.value = self.sensors[0].update()
         return self.rgb(self.value)
