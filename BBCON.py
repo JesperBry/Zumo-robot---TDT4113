@@ -78,6 +78,7 @@ class BBCON():
 
 
     def controller(self):
+        ZumoButton().wait_for_press()  # er nødt til å ha med denne tydeligvis
         i = 30
         while i > 0:
             self.run_one_timestep()
