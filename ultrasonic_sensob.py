@@ -7,6 +7,7 @@ class Ultrasonic_sensob(Sensob):
 
     def __init__(self):
         super(Ultrasonic_sensob, self).__init__()
+        print("hehe")
         self.sensors = [Ultrasonic()]
 
     def update(self):
