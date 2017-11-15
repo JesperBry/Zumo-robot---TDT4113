@@ -18,12 +18,12 @@ class Avoid_collisions(Behavior.Behavior):
     def sense_and_act(self):
         dist = self.sensobs[0].get_value()
 
-        ir = self.sensobs[1].get_value()
+        reflect = self.sensobs[1].get_value()
 
         self.match_degree = 0
         self.motor_recommendations = None
 
-        if (ir[0] or ir[1]) or dist < Config['minDist']:
+        if reflect > Config['reflectThr'] or dist < Config['minDist']:
             self.match_degree = 1
             self.motor_recommendations = Config['J_turn']
 
